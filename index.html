@@ -361,12 +361,11 @@
                 <div class="swiper-wrapper">
                     <!--==================== Certificate 1 ====================-->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/assets/img/python_cer.jpg" alt="" class="portfolio__img">
+                        <img src="assets/img/python_cer.jpg" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <p>Python Certificate</p>
-                            <a href="/assets/pdf/Python.pdf"
-                                class="button button--flex button--small portfolio_-button">
+                            <a href="assets/pdf/Python.pdf" class="button button--flex button--small portfolio_-button">
                                 Preview
                                 <i class="uil uil-arrow-right button__icon"></i>
                             </a>
@@ -374,11 +373,11 @@
                     </div>
                     <!--==================== Certificate 2 ====================-->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/assets/img/Cybersecurity.png" alt="" class="portfolio__img">
+                        <img src="assets/img/Cybersecurity.png" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <p> Cybersecurity Certificate</p>
-                            <a href="/assets/pdf/Coursera_Cyber security.pdf"
+                            <a href="assets/pdf/Coursera_Cyber security.pdf"
                                 class="button button--flex button--small portfolio_-button">
                                 Preview
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -490,16 +489,18 @@
             </div>
         </section>
 
-        <!--==================== PORTFOLIO ====================-->
+        <!-- Include Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
         <section class="portfolio section" id="portfolio">
             <h2 class="section__title">Portfolio</h2>
             <span class="section__subtitle">Most recent work</span>
 
-            <div data-aos="fade-right" class="portfolio__container container swiper-container">
+            <div data-aos="fade-right" class="portfolio__container container swiper">
                 <div class="swiper-wrapper">
                     <!--==================== PORTFOLIO 1 ====================-->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/assets/img/You-deserve-every-toy-you-want-Desktop-1600x900.jpg" alt=""
+                        <img src="assets/img/You-deserve-every-toy-you-want-Desktop-1600x900.jpg" alt=""
                             class="portfolio__img">
 
                         <div class="portfolio__data">
@@ -514,10 +515,10 @@
                     </div>
                     <!--==================== PORTFOLIO 2 ====================-->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/assets/img/portfolio2.jpg" alt="" class="portfolio__img">
+                        <img src="assets/img/portfolio2.jpg" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
-                            <h3 class="portfolio__title">Movie Database Web Application </h3>
+                            <h3 class="portfolio__title">Movie Database Web Application</h3>
                             <p class="portfolio__description">React.js, Tailwind CSS, SQL</p>
                             <a href="https://github.com/harshil585581/imdb_clone"
                                 class="button button--flex button--small portfolio_-button">
@@ -528,11 +529,11 @@
                     </div>
                     <!--==================== PORTFOLIO 3 ====================-->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/assets/img/portfolio3.jpg" alt="" class="portfolio__img">
+                        <img src="assets/img/portfolio3.jpg" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">ATS Electronic Website</h3>
-                            <p class="portfolio__description"> HTML, CSS, SQL, JavaScript</p>
+                            <p class="portfolio__description">HTML, CSS, SQL, JavaScript</p>
                             <a href="https://github.com/harshil585581/ATS-Website"
                                 class="button button--flex button--small portfolio_-button">
                                 Demo
@@ -541,7 +542,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Add Arrows -->
                 <div class="swiper-button-next">
@@ -555,6 +555,10 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+
+        <!-- Include Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
         <!--==================== CONTACT ME ====================-->
@@ -708,33 +712,33 @@
 
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // stop form from reloading page
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // stop form from reloading page
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const messageDiv = document.getElementById('form-message');
+        const form = e.target;
+        const formData = new FormData(form);
+        const messageDiv = document.getElementById('form-message');
 
-    fetch('https://formsubmit.co/ajax/harshil58558@gmail.com', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success === 'true') {
-            messageDiv.textContent = '✅ Your message has been sent successfully!';
-            messageDiv.style.color = 'green';
-            form.reset(); // clear the form fields
-        } else {
-            messageDiv.textContent = '❌ Oops! Something went wrong.';
-            messageDiv.style.color = 'red';
-        }
-    })
-    .catch(error => {
-        messageDiv.textContent = '❌ Error: Could not send the message.';
-        messageDiv.style.color = 'red';
+        fetch('https://formsubmit.co/ajax/harshil58558@gmail.com', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === 'true') {
+                    messageDiv.textContent = '✅ Your message has been sent successfully!';
+                    messageDiv.style.color = 'green';
+                    form.reset(); // clear the form fields
+                } else {
+                    messageDiv.textContent = '❌ Oops! Something went wrong.';
+                    messageDiv.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = '❌ Error: Could not send the message.';
+                messageDiv.style.color = 'red';
+            });
     });
-});
 </script>
 
 

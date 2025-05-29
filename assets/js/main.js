@@ -84,7 +84,17 @@ let swiperPortfolio = new Swiper('.portfolio__container', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    autoplay: {
+        delay: 3000,  // slide every 3 seconds
+        disableOnInteraction: false,  // continue autoplay after swipe/click/scroll
+    },
+    mousewheel: {
+        invert: false,  // normal scroll direction (scroll down → next slide)
+        sensitivity: 1, // adjust if you want faster or slower scroll response
+    },
 });
+
+
 
 /*==================== TESTIMONIAL ====================*/
 let swiperTestimonial = new Swiper('.testimonial__container', {

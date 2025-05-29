@@ -681,17 +681,31 @@ img {
 
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
-  overflow: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+    max-width: 900px; /* or whatever max width you want */
+    margin: 0 auto;
 }
 
 .portfolio__content {
-  padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
 }
 
 .portfolio__img {
-  width: 265px;
-  border-radius: .5rem;
-  justify-self: center;
+    width: 100%;
+    max-width: 400px;
+    border-radius: .5rem;
+    object-fit: cover;
 }
 
 .portfolio__title {
@@ -707,23 +721,34 @@ img {
   transform: translateX(.25rem);
 }
 
+/* Remove default Swiper big arrows */
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: '';
+    display: none !important;
+    content: none !important;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    outline: none !important;
+}
+
+/* Style your small arrow icons */
+.swiper-portfolio-icon {
+    font-size: 2rem;
+    color: var(--first-color);
+    cursor: pointer;
+}
+
 
 .swiper-portfolio-icon {
   font-size: 2rem;
   color: var(--first-color);
 }
 
-.swiper-button-prev {
-  left: -.5rem;
-}
-
-.swiper-button-next {
-  right: -.5rem;
-}
 
 .swiper-container-horizontal>.swiper-pagination-bullets {
   bottom: -2.5rem;
